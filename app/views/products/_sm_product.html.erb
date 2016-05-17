@@ -1,7 +1,7 @@
 <li class="span3" id="<%= p.id %>">
   <div class="thumbnail adtl_col" id="<%= p.id %>">
     <h4 id="<%= p.id %>" class="product_name">
-      <%= p.name %>
+      <%= p.name.html_safe %>
     </h4>
     <% if p.image.exists? %>
       <span id="<%= p.id %>", class="small_product">
@@ -14,6 +14,3 @@
     <%= button_to 'Add to Cart', line_items_path(:product_id => p), :class => "btn btn-success", :id => "prod_#{p.id}" %>
   </div>
 </li>
-
-
-
